@@ -16,7 +16,7 @@ struct Node{
 
     }
 };
-Node * printhead(vector<int> &arr){
+Node * printhead(vector<int> &arr){ //indentifying the head
     Node* head=new Node(arr[0]);
     Node* mover=head;
     for(int i=1;i<arr.size();i++){
@@ -26,6 +26,15 @@ Node * printhead(vector<int> &arr){
     }
     return head;
 }
+int lengthofLL(Node* head){ // length of linked list
+    int count=0;
+     Node* traversal=head;
+     while(traversal){
+    traversal=traversal->next;
+    count++;
+ }
+ return count;
+}
 int main(){
  vector<int> arr={12,34,556,77,67};
  Node * head= printhead(arr);
@@ -34,5 +43,7 @@ int main(){
     cout<<traversal->data<<" ";
     traversal=traversal->next;
  }
+cout<<endl;
+ cout<<"Length of list:"<<lengthofLL(head);
 return 0;
 }
